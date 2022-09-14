@@ -1,0 +1,26 @@
+{
+  "name": "ej-mongoose",
+  "version": "1.0.0",
+  "description": "Primer ejercicio con mongoose",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/btt08/ej-mongoose.git"
+  },
+  "author": "BTT",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/btt08/ej-mongoose/issues"
+  },
+  "homepage": "https://github.com/btt08/ej-mongoose#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "nodemon": "^2.0.19",
+    "pg": "^8.8.0"
+  }
+}
