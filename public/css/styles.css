@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  background-color: #ccc;
+  font-family: 'Lato', sans-serif;
+}
+
+#header-main {
+  background-color: #000000;
+  background-image: linear-gradient(147deg, #434343 0%, #000000 90%);
+  color: #fff;
+  height: 60px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#navbar {
+  list-style: none;
+  display: flex;
+  font-size: 1.2rem;
+}
+
+#navbar li {
+  margin-right: 10px;
+  padding-right: 10px;
+  border-right: 1px solid #fff;
+}
+
+#navbar li:last-child {
+  border-right: none;
+}
+
+a,
+a:active,
+a:visited {
+  padding: 4px;
+  border-radius: 10px;
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover {
+  background-color: #444;
+}
+
+#main-content {
+  width: 85%;
+  margin: auto;
+  margin-top: 35px;
+  display: flex;
+  gap: 50px;
+}
+
+#search {
+  border: 1px solid black;
+  border-radius: 15px;
+  height: 19em;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+#search label {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+#search input,
+#search select {
+  margin: 10px;
+}
+
+#search select,
+#search option {
+  font-size: 1rem;
+}
+
+#search button {
+  height: 30px;
+  background-color: #aaa;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+#search button:hover {
+  background-color: #434343;
+}
+
+.subtitle {
+  background-color: #000000;
+  background-image: linear-gradient(147deg, #434343 0%, #000000 90%);
+  height: 50px;
+  line-height: 50px;
+  padding: 0 10px;
+  color: white;
+  font-size: 1.1rem;
+}
+
+.cars {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 31%;
+  background-color: #000000;
+  background-image: linear-gradient(147deg, #434343 0%, #000000 90%);
+  color: #fff;
+  padding: 10px;
+  margin: 10px;
+}
+
+.card img {
+  display: block;
+  margin: 10px auto;
+  width: 80%;
+}
+
+.card,
+.card img {
+  border-radius: 10px;
+}
+
+.add {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card .carName {
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding: 4px;
+}
+
+.card .details {
+  margin: 5px;
+  margin-bottom: 2px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.card .label {
+  font-size: 1.1rem;
+  margin-left: 5px;
+}
+
+.card .dataNumber {
+  margin: 4px 0;
+  font-size: 1.1rem;
+  color: orangered;
+}
+
+.card .dataPrice {
+  font-size: 2rem;
+  color: limegreen;
+}
+
+.card .dataNumber,
+.card .dataPrice {
+  align-self: center;
+}
+
+.btns {
+  display: flex;
+}
+
+.btn {
+  background-color: rgb(33, 60, 87);
+  width: 100px;
+  margin: 10px auto;
+  padding: 4px;
+  cursor: po;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#footer-main {
+  background-color: #000000;
+  background-image: linear-gradient(147deg, #434343 0%, #000000 90%);
+  color: #fff;
+  margin-top: 30px;
+  padding-top: 10px;
+}
+
+#footer-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.categories h3,
+.someText h3 {
+  margin: 5px;
+}
+
+.categories .list {
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  padding: 4px;
+  list-style: none;
+}
+
+.categories li {
+  margin-top: 5px;
+  border-bottom: 1px solid #fff;
+}
+
+.someText p {
+  max-width: 30ch;
+  padding-left: 15px;
+}
+
+.copyright {
+  border-top: 1px solid #fff;
+  margin-top: 10px;
+  padding: 10px;
+  text-align: center;
+}

@@ -1,70 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible"
-          content="IE=edge">
+    <meta charset="UTF-8" />
     <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-    <script defer
-            src="./js/main.js"></script>
-    <title>Document</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        padding-top: 10px;
-        padding-bottom: 50px;
-        min-height: 100vh;
-        background-color: black;
-        color: white;
-        font-size: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      #content {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-      }
-
-      .car {
-        width: 480px;
-        margin-top: 20px;
-        padding: 10px;
-        border: 3px darkgray solid;
-      }
-
-      .car p {
-        margin: 0 5px;
-      }
-    </style>
+          content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet"
+          href="./css/styles.css" />
+    <script src="./js/main.js"
+            defer></script>
+    <title>Web con flexbox</title>
   </head>
   <body>
-    <form action="">
-      <input type="text"
-             id="input-brand"
-             placeholder="Marca">
-      <input type="text"
-             id="input-color"
-             placeholder="Color">
-      <input type="number"
-             id="input-price"
-             placeholder="Precio">
-      <select name="manufacturers"
-              id="select-manufacturers">
-        <option value="">All</option>
-      </select>
-      <input type="button"
-             id="btn-search"
-             value="Buscar">
-    </form>
-    <div id="content"> </div>
+    <div class="wrapper">
+      <header id="header-main">
+        <h1 id="header-title">Concesionario Pepito</h1>
+        <nav id="nav">
+          <ul id="navbar">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="#">Lorem</a></li>
+            <li><a href="#">Ipsum</a></li>
+            <li><a href="#">Dolor</a></li>
+            <li><a href="#">Sit</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main id="main-content">
+        <section>
+          <form id="search">
+            <label for="brand">Marca</label>
+            <select name="manufacturers"
+                    id="select-manufacturers">
+              <option value="">All</option>
+            </select>
+
+            <label for="model">Modelo</label>
+            <input type="text"
+                   id="input-brand"
+                   placeholder="Modelo">
+
+            <label for="bodyType">Color</label>
+            <input type="text"
+                   id="input-color"
+                   placeholder="Color">
+
+            <label for="year">Precio</label>
+            <input type="number"
+                   id="input-price"
+                   placeholder="Precio">
+
+            <button id="btn-search">Buscar</button>
+          </form>
+        </section>
+        <section id="content"
+                 class="content">
+          <!-- <div class="subtitle">
+            <h2>Últimas novedades</h2>
+          </div> -->
+
+          <div id="cars"
+               class="cars">
+            <article class="card">
+
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer id="footer-main">
+        <div id="footer-container">
+          <div class="categories">
+            <h3>Categorías</h3>
+            <ul class="list">
+              <li><a href="#">Nuevos</a></li>
+              <li><a href="#">Segunda mano</a></li>
+              <li><a href="#">Km 0</a></li>
+            </ul>
+          </div>
+          <div class="someText">
+            <h3>Algo más</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel
+              dolorum sed consectetur dolor eos debitis illo ducimus quae quo
+            </p>
+          </div>
+        </div>
+        <div class="copyright">2022 &copy; Todos los derechos reservados</div>
+      </footer>
+    </div>
   </body>
 </html>
