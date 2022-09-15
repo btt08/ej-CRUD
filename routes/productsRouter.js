@@ -18,7 +18,26 @@ router.post('/search', async (req, res, next) => {
   } catch (error) {
     next(error)
   }
-})
+});
+
+
+router.get('/car/:id', async (req, res, next) => {
+  try {
+    const result = await products.getCarById(req.params.id);
+    res.json(result.rows[0]).status(200).end();
+  } catch (error) {
+    next(error)
+  }
+});
+
+router.patch('/update', async (req, res, next) => {
+  try {
+    const result = await products.updateCar(req.body);
+    res.json(result).status(200).end();
+  } catch (error) {
+    next(error);
+  }
+});
 
 router.get('/manufacturers', async (req, res, next) => {
   try {
@@ -29,9 +48,28 @@ router.get('/manufacturers', async (req, res, next) => {
   }
 });
 
-router.get('/delete/:id', async (req, res, next) => {
+router.get('/ids', async (req, res, next) => {
   try {
-    const result = await products.deleteCar(req.params.id);
+    const result = await products.getMaxId();
+    res.json(result.rows[0].max).status(200).end();
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.post('/insert', async (req, res, next) => {
+  try {
+    const result = await products.insertCar(req.body);
+    res.json(result).status(200).end();
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.delete('/delete/:id', async (req, res, next) => {
+  try {
+    await products.deleteCar(req.params.id);
+    res.status(200).end();
   } catch (error) {
     console.error(error);
   }

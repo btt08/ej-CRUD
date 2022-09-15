@@ -10,13 +10,47 @@ const filterProducts = async (brand, color, price, manufacturer) => {
   return await client.query(query);
 };
 
+const getCarById = async (id) => {
+  const query = `SELECT id, name AS brand, price, color, cif FROM products WHERE id = ${id}`;
+  return await client.query(query);
+};
+
+const updateCar = async ({ id, brand, color, price, cif }) => {
+  const query = `UPDATE products SET name=$1, color=$2, price=$3, cif=$4 WHERE id = $5`;
+  const values = [brand, color, price, cif, id];
+  try {
+    return await client.query(query, values);
+  } catch (error) {
+    console.log(error)
+  }
+};
+
+const insertCar = async ({ id, brand, color, price, cif }) => {
+  const query = "INSERT INTO products (id, name, color, price, cif) VALUES ($1, $2, $3, $4, $5)";
+  const values = [id, brand, color, price, cif];
+  try {
+    return await client.query(query, values);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const getMaxId = async () => {
+  const query = "SELECT MAX(id) FROM products"
+  return await client.query(query);
+};
+
 const deleteCar = async (id) => {
-  const query = `DELETE FROM public.products WHERE id = ${id};`;
+  const query = `DELETE FROM products WHERE id = ${id};`;
   return await client.query(query);
 };
 
 module.exports = {
   getAllProducts,
   filterProducts,
-  deleteCar
+  getCarById,
+  updateCar,
+  insertCar,
+  deleteCar,
+  getMaxId
 };

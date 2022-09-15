@@ -61,7 +61,8 @@ a:hover {
   gap: 50px;
 }
 
-#search {
+#search,
+#update {
   border: 1px solid black;
   border-radius: 15px;
   height: 19em;
@@ -70,18 +71,30 @@ a:hover {
   flex-direction: column;
 }
 
-#search label {
+#update {
+  height: 100%;
+}
+
+#search label,
+#update label {
   font-size: 0.9rem;
   font-weight: 600;
 }
 
 #search input,
-#search select {
+#search select,
+#update input,
+#update select {
+  font-size: 1.1rem;
   margin: 10px;
+  padding: 0 4px;
+  height: 1.5rem;
 }
 
 #search select,
-#search option {
+#search option,
+#update select,
+#update option {
   font-size: 1rem;
 }
 
@@ -96,6 +109,29 @@ a:hover {
   background-color: #434343;
 }
 
+#btn-update,
+#btn-cancel-update {
+  margin: 5px;
+  height: 30px;
+  padding: 10px;
+  background-color: #aaa;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+#btn-update:hover {
+  background-color: #eee;
+}
+
+#btn-cancel-update {
+  color: #fff;
+  background-color: rgb(210, 0, 0);
+}
+
+#btn-cancel-update:hover {
+  background-color: rgb(255, 0, 0);
+}
+
 .subtitle {
   background-color: #000000;
   background-image: linear-gradient(147deg, #434343 0%, #000000 90%);
@@ -104,6 +140,37 @@ a:hover {
   padding: 0 10px;
   color: white;
   font-size: 1.1rem;
+}
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.1);
+  transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ccc;
+  padding: 1rem 1.5rem;
+  width: 24rem;
+  border-radius: 0.5rem;
+}
+
+.show-modal {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1.0);
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }
 
 .cars {
